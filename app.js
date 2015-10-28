@@ -11,7 +11,7 @@ http.createServer(function (request, response){
   router.home(request, response);
   router.user(request, response);
 }).listen(3000, '127.0.0.1');
-console.log('Server is running at http://127.0.0.1:3000/');
+console.log('Server is running at https://127.0.0.1:3000/');
 
 // Function that handles the reading of files and merge in values
   // read from file and get a string
