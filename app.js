@@ -7,20 +7,23 @@
 
 var http = require('http');
 http.createServer(function (request, response){
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  setInterval(function(){
-    response.write(new Date() + "\n");
-  }, 1000);
-  //response.end();
+  homeRoute(request, response);
 }).listen(3000, '127.0.0.1');
 console.log('Server is running at http://127.0.0.1:3000/');
 
 //2. Handle HTTP route GET / and POST /  i.e. Home
+  function homeRoute(request, response) {
   // if url == "/" && GET
     // show search
+    if(request.url === "/") {
+      response.writeHead(200, {'Content-Type': 'text/plain'});
+      response.write("Header\n");
+      response.write("Search\n");
+      response.end("Footer\n");
+    }
   // if url == "/" && POST
     // redirect to /:username
-
+};
 //3. Handle HTTP route GET /:username i.e. /markwaldron
   // if url == "/..."
     // get json from Treehouse
